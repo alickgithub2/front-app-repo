@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Checkout source code
         uses: actions/checkout@v2
-        
+
       - uses: actions/setup-node@v3
         with:
           node-version: 16
@@ -72,7 +72,7 @@ jobs:
       - name: Checkout kustomize repository
         uses: actions/checkout@v2
         with:
-          repository: $GITHUB_USERNAME/k8s-manifest-repo
+          repository: /k8s-manifest-repo
           ref: main
           token: ${{ secrets.ACTION_TOKEN }}
           path: k8s-manifest-repo
@@ -93,3 +93,4 @@ jobs:
           git config --global user.name "github-actions"
           git commit -am "Update image tag"
           git push -u origin main
+
